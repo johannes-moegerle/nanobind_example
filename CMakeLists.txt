@@ -36,7 +36,7 @@ find_package(nanobind CONFIG REQUIRED)
 # We are now ready to compile the actual extension module
 nanobind_add_module(
   # Name of the extension
-  nanobind_example_ext
+  backend
 
   # Target the stable ABI for Python 3.12+, which reduces
   # the number of binary wheels that must be built. This
@@ -52,8 +52,8 @@ nanobind_add_module(
   NB_STATIC
 
   # Source code goes here
-  src/nanobind_example_ext.cpp
+  src/cpp/backend.cpp
 )
 
 # Install directive for scikit-build-core
-install(TARGETS nanobind_example_ext LIBRARY DESTINATION nanobind_example)
+install(TARGETS backend LIBRARY DESTINATION nanobind_example)

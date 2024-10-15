@@ -1,1 +1,3 @@
-from .nanobind_example_ext import add, __doc__
+from nanobind_example import backend
+
+__all__ = ["backend"]
