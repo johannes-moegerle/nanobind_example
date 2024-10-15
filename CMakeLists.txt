@@ -57,3 +57,12 @@ nanobind_add_module(
 
 # Install directive for scikit-build-core
 install(TARGETS backend LIBRARY DESTINATION nanobind_example)
+
+nanobind_add_stub(
+  backend_stub
+  MODULE backend
+  OUTPUT backend.pyi
+  PYTHON_PATH $<TARGET_FILE_DIR:backend>
+  DEPENDS backend
+)
+install(FILES $<TARGET_FILE_DIR:backend>/backend.pyi DESTINATION nanobind_example)
